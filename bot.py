@@ -6,10 +6,10 @@ from pytgcalls import PyTgCalls
 from pytgcalls.types.input_stream import InputStream, InputAudioStream
 import yt_dlp
 
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-SESSION_STRING = os.getenv("SESSION_STRING")
+API_ID = int(os.getenv("39613799"))
+API_HASH = os.getenv("bc3f55f7f85b89a311b677b7c8e8dc1e")
+BOT_TOKEN = os.getenv("8522989042:AAF6QwmpgBATmDI4_qFiOnlvMQm7s4Nyoxo")
+SESSION_STRING = os.getenv("BQJcdWcAWnFTrimEvYhIOuZk4-7yVcNs-goDJx0yA-qkfGL7UoHqnnbSDXSDR6Uo2D6xfwB3p3HKQVVlKK7x34l_PfNPReB5CWX07lomoX1I04pVh_jlG-1_KhrZmPmbu36BZY5bKnxBUFX26hutb_ccrUwO6-TivG9_utFeyaR0PSHOtrgqD09i5Zf92R_E-_JK8ZBU8bpEE2ghZfIxYTWguQRjLq1ocQ_Up5cqtzcb8bqpKiY32CsLqMNE2CAJuXfSns1VkkzDqkMA9nFVJAIj3zsWs4H7FUJeY1xbFMyowW0W859LEBe1UjepkhiZ1i-mI_jb2mq4EA74Xkx2XLP0DOOsygAAAAIIu_F7AA")
 
 bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 user = Client("user", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)

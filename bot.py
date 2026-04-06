@@ -1,14 +1,17 @@
 import os
 import asyncio
+import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pytgcalls import PyTgCalls
-from pytgcalls.types.input_stream import InputStream, InputAudioStream
+from pytgcalls.types import MediaStream
 import yt_dlp
+
+logging.basicConfig(level=logging.INFO)
 
 API_ID = int(os.getenv("39613799"))
 API_HASH = os.getenv("bc3f55f7f85b89a311b677b7c8e8dc1e")
-BOT_TOKEN = os.getenv("8522989042:AAF6QwmpgBATmDI4_qFiOnlvMQm7s4Nyoxo")
+BOT_TOKEN = os.getenv("8522989042:AAFk5mOnNrzpp6Her5IfAjFmTOU8HpKaui8")
 SESSION_STRING = os.getenv("BQJcdWcAWnFTrimEvYhIOuZk4-7yVcNs-goDJx0yA-qkfGL7UoHqnnbSDXSDR6Uo2D6xfwB3p3HKQVVlKK7x34l_PfNPReB5CWX07lomoX1I04pVh_jlG-1_KhrZmPmbu36BZY5bKnxBUFX26hutb_ccrUwO6-TivG9_utFeyaR0PSHOtrgqD09i5Zf92R_E-_JK8ZBU8bpEE2ghZfIxYTWguQRjLq1ocQ_Up5cqtzcb8bqpKiY32CsLqMNE2CAJuXfSns1VkkzDqkMA9nFVJAIj3zsWs4H7FUJeY1xbFMyowW0W859LEBe1UjepkhiZ1i-mI_jb2mq4EA74Xkx2XLP0DOOsygAAAAIIu_F7AA")
 
 bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
@@ -31,7 +34,10 @@ async def play_song(chat_id):
 
     await call.join_group_call(
         chat_id,
-        InputStream(InputAudioStream(url)),
+        await call.join_group_call(
+    chat_id,
+    MediaStream(url),
+),
     )
 
 @bot.on_message(filters.command("play"))
